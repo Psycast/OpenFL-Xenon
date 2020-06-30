@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	<!-- NMML reference: https://gist.github.com/1763850 -->
+	
+	<!-- metadata, make sure 'package' is at least 3 segments (ie. com.mycompany.myproject) -->
+	<meta title="OpenFL-Xenon" package="com.flashfla.xenon" version="1.0.0" company="Jonathan (Velocity)" />
+	
+	<!-- output -->
+	<app main="Main" file="OpenFL-Xenon" path="bin" />
+	
+	<window background="#000000" fps="60" />
+	<window width="800" height="600" unless="mobile" />
+	<window width="0" height="0" if="html5" />
+	<window orientation="landscape" vsync="false" antialiasing="0" if="cpp" />
+	
+	<!-- classpath, haxe libs -->
+	<source path="src" />
+	<haxelib name="openfl" />
+	<haxelib name="actuate" />
+    <haxelib name="swf" />
+	
+	<!-- assets -->
+	<library path="Assets/Assets.swf" preload="true" generate="true" />
+	<assets path="assets/img" rename="img" />
+	<assets path="assets/fonts" rename="fonts" include="*.ttf" unless="flash"  />
+	
+	<!-- optimize output-->
+	<haxeflag name="-dce full" />
+	
+</project>
